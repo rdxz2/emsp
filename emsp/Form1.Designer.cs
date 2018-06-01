@@ -73,9 +73,8 @@
             // masuk_b
             // 
             this.masuk_b.BackColor = System.Drawing.Color.DarkOrange;
-            this.masuk_b.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.masuk_b.FlatAppearance.BorderSize = 0;
-            this.masuk_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.masuk_b.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.masuk_b.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.masuk_b.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.masuk_b.Location = new System.Drawing.Point(249, 250);
@@ -120,8 +119,8 @@
             this.close_b.TabIndex = 7;
             this.close_b.TabStop = false;
             this.close_b.Click += new System.EventHandler(this.p_close_Click);
+            this.close_b.MouseEnter += new System.EventHandler(this.close_b_MouseEnter);
             this.close_b.MouseLeave += new System.EventHandler(this.close_b_MouseLeave);
-            this.close_b.MouseHover += new System.EventHandler(this.close_b_MouseHover);
             // 
             // pictureBox2
             // 

@@ -32,11 +32,6 @@ namespace emsp
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             id_t.Focus();
@@ -64,6 +59,11 @@ namespace emsp
             Tog = 0;
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void minimize_b_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -76,7 +76,7 @@ namespace emsp
             Hide();
         }
 
-        private void close_b_MouseHover(object sender, EventArgs e)
+        private void close_b_MouseEnter(object sender, EventArgs e)
         {
             this.close_b.Load(AppDomain.CurrentDomain.BaseDirectory + "/asset/closed.png");
         }
@@ -85,6 +85,7 @@ namespace emsp
         {
             this.close_b.Load(AppDomain.CurrentDomain.BaseDirectory + "/asset/close.png");
         }
+
 
         private void p_close_Click(object sender, EventArgs e)
         {
