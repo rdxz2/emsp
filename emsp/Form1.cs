@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,29 +25,11 @@ namespace emsp
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-
+        
         public Form1()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void b_login_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
-
-            Hide();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -55,8 +39,7 @@ namespace emsp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tb_id.Focus();
-
+            id_t.Focus();
         }
 
         int Tog;
@@ -81,6 +64,28 @@ namespace emsp
             Tog = 0;
         }
 
+        private void minimize_b_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void masuk_b_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            Hide();
+        }
+
+        private void close_b_MouseHover(object sender, EventArgs e)
+        {
+            this.close_b.Load(AppDomain.CurrentDomain.BaseDirectory + "/asset/closed.png");
+        }
+
+        private void close_b_MouseLeave(object sender, EventArgs e)
+        {
+            this.close_b.Load(AppDomain.CurrentDomain.BaseDirectory + "/asset/close.png");
+        }
+
         private void p_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -98,4 +103,5 @@ namespace emsp
     //        base.OnPaint(e);
     //    }
     //}
+    
 }

@@ -65,18 +65,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -85,33 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\bg_putih.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\e-msp_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\id.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\max.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\min.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\password.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\res_down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="asset\round_tb.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

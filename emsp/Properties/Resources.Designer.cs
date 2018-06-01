@@ -63,6 +63,16 @@ namespace emsp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_06 {
+            get {
+                object obj = ResourceManager.GetObject("background-06", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_putih {
             get {
                 object obj = ResourceManager.GetObject("bg_putih", resourceCulture);
@@ -103,6 +113,16 @@ namespace emsp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login_textbox {
+            get {
+                object obj = ResourceManager.GetObject("login_textbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap max {
             get {
                 object obj = ResourceManager.GetObject("max", resourceCulture);
@@ -116,6 +136,16 @@ namespace emsp.Properties {
         internal static System.Drawing.Bitmap min {
             get {
                 object obj = ResourceManager.GetObject("min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap orange {
+            get {
+                object obj = ResourceManager.GetObject("orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
