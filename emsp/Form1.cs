@@ -37,6 +37,40 @@ namespace emsp
             id_t.Focus();
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //TOMBOL LOGIN
+        private void masuk_b_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            Hide();
+        }
+
+        //TOMBOL MINIMIZE
+        private void minimize_b_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        //TOMBOL CLOSE
+        private void close_b_MouseEnter(object sender, EventArgs e)
+        {
+            this.close_b.Load(AppDomain.CurrentDomain.BaseDirectory + "/asset/closed.png");
+        }
+        private void close_b_MouseLeave(object sender, EventArgs e)
+        {
+            this.close_b.Load(AppDomain.CurrentDomain.BaseDirectory + "/asset/close.png");
+        }
+        private void close_b_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //DRAG WINDOW
         int Tog;
         int SX, SY;
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -45,7 +79,6 @@ namespace emsp
             SX = e.X;
             SY = e.Y;
         }
-
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             if (Tog == 1)
@@ -53,56 +86,11 @@ namespace emsp
                 this.SetDesktopLocation(MousePosition.X - SX, MousePosition.Y - SY);
             }
         }
-
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             Tog = 0;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void minimize_b_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void masuk_b_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
-            Hide();
-        }
-
-        private void close_b_MouseEnter(object sender, EventArgs e)
-        {
-            this.close_b.Load(AppDomain.CurrentDomain.BaseDirectory + "/asset/closed.png");
-        }
-
-        private void close_b_MouseLeave(object sender, EventArgs e)
-        {
-            this.close_b.Load(AppDomain.CurrentDomain.BaseDirectory + "/asset/close.png");
-        }
-
-
-        private void p_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
     }
-
-    //public class RoundButton : Button
-    //{
-    //    protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
-    //    {
-    //        GraphicsPath grPath = new GraphicsPath();
-    //        grPath.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
-    //        this.Region = new System.Drawing.Region(grPath);
-    //        base.OnPaint(e);
-    //    }
-    //}
-    
 }

@@ -118,7 +118,7 @@
             this.close_b.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.close_b.TabIndex = 7;
             this.close_b.TabStop = false;
-            this.close_b.Click += new System.EventHandler(this.p_close_Click);
+            this.close_b.Click += new System.EventHandler(this.close_b_Click);
             this.close_b.MouseEnter += new System.EventHandler(this.close_b_MouseEnter);
             this.close_b.MouseLeave += new System.EventHandler(this.close_b_MouseLeave);
             // 

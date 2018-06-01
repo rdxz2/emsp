@@ -65,6 +65,7 @@
             this.minimize_b.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.minimize_b.TabIndex = 8;
             this.minimize_b.TabStop = false;
+            this.minimize_b.Click += new System.EventHandler(this.minimize_b_Click);
             // 
             // close_b
             // 
@@ -78,6 +79,8 @@
             this.close_b.TabIndex = 9;
             this.close_b.TabStop = false;
             this.close_b.Click += new System.EventHandler(this.close_b_Click);
+            this.close_b.MouseEnter += new System.EventHandler(this.close_b_MouseEnter);
+            this.close_b.MouseLeave += new System.EventHandler(this.close_b_MouseLeave);
             // 
             // label
             // 
@@ -204,7 +207,7 @@
             this.jam_cob.BackColor = System.Drawing.Color.DarkGray;
             this.jam_cob.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jam_cob.FormattingEnabled = true;
-            this.jam_cob.Location = new System.Drawing.Point(306, 119);
+            this.jam_cob.Location = new System.Drawing.Point(316, 119);
             this.jam_cob.Name = "jam_cob";
             this.jam_cob.Size = new System.Drawing.Size(160, 24);
             this.jam_cob.TabIndex = 25;
@@ -214,7 +217,7 @@
             this.matkul_cob.BackColor = System.Drawing.Color.DarkGray;
             this.matkul_cob.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.matkul_cob.FormattingEnabled = true;
-            this.matkul_cob.Location = new System.Drawing.Point(306, 86);
+            this.matkul_cob.Location = new System.Drawing.Point(316, 86);
             this.matkul_cob.Name = "matkul_cob";
             this.matkul_cob.Size = new System.Drawing.Size(160, 24);
             this.matkul_cob.TabIndex = 26;
@@ -246,7 +249,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(215, 90);
+            this.label3.Location = new System.Drawing.Point(228, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 19;
@@ -258,7 +261,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(259, 122);
+            this.label2.Location = new System.Drawing.Point(269, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 20;
@@ -272,7 +275,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
             this.label1.Location = new System.Drawing.Point(497, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.Size = new System.Drawing.Size(88, 16);
             this.label1.TabIndex = 21;
             this.label1.Text = "Hari, Tanggal :";
             // 
@@ -306,7 +309,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load_1);
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.minimize_b)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_b)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menu_kehadiran_dg)).EndInit();
