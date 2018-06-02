@@ -71,6 +71,14 @@ namespace emsp
                 this.SetDesktopLocation(MousePosition.X - SX, MousePosition.Y - SY);
             }
         }
+
+        private void menu_penilaian_b_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+            Hide();
+        }
+
         private void Form2_MouseUp(object sender, MouseEventArgs e)
         {
             Tog = 0;

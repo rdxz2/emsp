@@ -45,6 +45,7 @@ namespace emsp
                 this.SetDesktopLocation(MousePosition.X - SX, MousePosition.Y - SY);
             }
         }
+
         private void Form3_MouseUp(object sender, MouseEventArgs e)
         {
             Tog = 0;
