@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.minimize_b = new System.Windows.Forms.PictureBox();
             this.close_b = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.nama_l = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.matkul_cob = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.menu_penilaian_dg = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.menu_penilaian_b = new System.Windows.Forms.Button();
+            this.menu_kehadiran_b = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.minimize_b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menu_penilaian_dg)).BeginInit();
@@ -69,46 +69,6 @@
             this.close_b.TabIndex = 11;
             this.close_b.TabStop = false;
             // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(20, 442);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 90);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Mahasiswa";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(20, 337);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 90);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Profil";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(20, 232);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 90);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Penilaian";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(20, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 90);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Kehadiran";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // nama_l
             // 
             this.nama_l.AutoSize = true;
@@ -122,11 +82,11 @@
             // 
             this.label.AutoSize = true;
             this.label.BackColor = System.Drawing.Color.Transparent;
-            this.label.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Font = new System.Drawing.Font("Book Antiqua", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.Color.DarkGray;
             this.label.Location = new System.Drawing.Point(26, 57);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(130, 19);
+            this.label.Size = new System.Drawing.Size(129, 20);
             this.label.TabIndex = 22;
             this.label.Text = "Selamat datang, ";
             // 
@@ -161,6 +121,56 @@
             this.menu_penilaian_dg.Size = new System.Drawing.Size(530, 147);
             this.menu_penilaian_dg.TabIndex = 31;
             // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(20, 442);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(160, 90);
+            this.button5.TabIndex = 35;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(20, 337);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(160, 90);
+            this.button6.TabIndex = 34;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // menu_penilaian_b
+            // 
+            this.menu_penilaian_b.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.menu_penilaian_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu_penilaian_b.BackgroundImage")));
+            this.menu_penilaian_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menu_penilaian_b.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.menu_penilaian_b.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu_penilaian_b.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.menu_penilaian_b.Location = new System.Drawing.Point(20, 232);
+            this.menu_penilaian_b.Name = "menu_penilaian_b";
+            this.menu_penilaian_b.Size = new System.Drawing.Size(160, 90);
+            this.menu_penilaian_b.TabIndex = 33;
+            this.menu_penilaian_b.UseVisualStyleBackColor = false;
+            // 
+            // menu_kehadiran_b
+            // 
+            this.menu_kehadiran_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu_kehadiran_b.BackgroundImage")));
+            this.menu_kehadiran_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menu_kehadiran_b.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.menu_kehadiran_b.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu_kehadiran_b.Location = new System.Drawing.Point(20, 127);
+            this.menu_kehadiran_b.Name = "menu_kehadiran_b";
+            this.menu_kehadiran_b.Size = new System.Drawing.Size(160, 90);
+            this.menu_kehadiran_b.TabIndex = 32;
+            this.menu_kehadiran_b.UseVisualStyleBackColor = true;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,20 +178,21 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 550);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.menu_penilaian_b);
+            this.Controls.Add(this.menu_kehadiran_b);
             this.Controls.Add(this.menu_penilaian_dg);
             this.Controls.Add(this.matkul_cob);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.nama_l);
             this.Controls.Add(this.label);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.minimize_b);
             this.Controls.Add(this.close_b);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form3_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form3_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form3_MouseUp);
@@ -197,14 +208,14 @@
 
         private System.Windows.Forms.PictureBox minimize_b;
         private System.Windows.Forms.PictureBox close_b;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label nama_l;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.ComboBox matkul_cob;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView menu_penilaian_dg;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button menu_penilaian_b;
+        private System.Windows.Forms.Button menu_kehadiran_b;
     }
 }
