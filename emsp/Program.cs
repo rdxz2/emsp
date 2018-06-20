@@ -16,7 +16,9 @@ namespace emsp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Login login= new Login();
+            login.StartPosition = FormStartPosition.CenterScreen;
+            Application.Run(login);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace emsp
 {
-    partial class Form2
+    partial class Menu_Kehadiran
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Kehadiran));
             this.minimize_b = new System.Windows.Forms.PictureBox();
             this.close_b = new System.Windows.Forms.PictureBox();
             this.label = new System.Windows.Forms.Label();
@@ -43,9 +43,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.daftar_kelas_lb = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimize_b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kehadiran_dg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // minimize_b
@@ -101,7 +103,7 @@
             // 
             // menu_mahasiswa_b
             // 
-            this.menu_mahasiswa_b.BackColor = System.Drawing.Color.Transparent;
+            this.menu_mahasiswa_b.BackColor = System.Drawing.Color.White;
             this.menu_mahasiswa_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu_mahasiswa_b.BackgroundImage")));
             this.menu_mahasiswa_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menu_mahasiswa_b.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -115,7 +117,7 @@
             // 
             // menu_pengajar_b
             // 
-            this.menu_pengajar_b.BackColor = System.Drawing.Color.Transparent;
+            this.menu_pengajar_b.BackColor = System.Drawing.SystemColors.Control;
             this.menu_pengajar_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu_pengajar_b.BackgroundImage")));
             this.menu_pengajar_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menu_pengajar_b.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -129,7 +131,7 @@
             // 
             // menu_penilaian_b
             // 
-            this.menu_penilaian_b.BackColor = System.Drawing.Color.Transparent;
+            this.menu_penilaian_b.BackColor = System.Drawing.SystemColors.Control;
             this.menu_penilaian_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu_penilaian_b.BackgroundImage")));
             this.menu_penilaian_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menu_penilaian_b.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -166,6 +168,7 @@
             this.batal_b.TabIndex = 29;
             this.batal_b.Text = "Batal";
             this.batal_b.UseVisualStyleBackColor = false;
+            this.batal_b.Click += new System.EventHandler(this.batal_b_Click);
             // 
             // simpan_b
             // 
@@ -179,6 +182,7 @@
             this.simpan_b.TabIndex = 28;
             this.simpan_b.Text = "Simpan";
             this.simpan_b.UseVisualStyleBackColor = false;
+            this.simpan_b.Click += new System.EventHandler(this.simpan_b_Click);
             // 
             // kehadiran_dg
             // 
@@ -188,6 +192,7 @@
             this.kehadiran_dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.kehadiran_dg.BackgroundColor = System.Drawing.Color.Silver;
             this.kehadiran_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.kehadiran_dg.GridColor = System.Drawing.Color.Black;
             this.kehadiran_dg.Location = new System.Drawing.Point(228, 232);
             this.kehadiran_dg.MultiSelect = false;
             this.kehadiran_dg.Name = "kehadiran_dg";
@@ -213,10 +218,10 @@
             this.daftar_kelas_lb.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.daftar_kelas_lb.FormattingEnabled = true;
             this.daftar_kelas_lb.ItemHeight = 14;
-            this.daftar_kelas_lb.Location = new System.Drawing.Point(228, 94);
+            this.daftar_kelas_lb.Location = new System.Drawing.Point(228, 80);
             this.daftar_kelas_lb.Name = "daftar_kelas_lb";
             this.daftar_kelas_lb.ScrollAlwaysVisible = true;
-            this.daftar_kelas_lb.Size = new System.Drawing.Size(530, 102);
+            this.daftar_kelas_lb.Size = new System.Drawing.Size(530, 116);
             this.daftar_kelas_lb.TabIndex = 31;
             this.daftar_kelas_lb.SelectedIndexChanged += new System.EventHandler(this.daftar_kelas_lb_SelectedIndexChanged);
             // 
@@ -226,19 +231,31 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(228, 72);
+            this.label1.Location = new System.Drawing.Point(228, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 19);
             this.label1.TabIndex = 32;
             this.label1.Text = "Daftar Kelas:";
             // 
-            // Form2
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(192, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 493);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Menu_Kehadiran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 550);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.daftar_kelas_lb);
             this.Controls.Add(this.label5);
@@ -254,15 +271,16 @@
             this.Controls.Add(this.minimize_b);
             this.Controls.Add(this.close_b);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form2";
+            this.Name = "Menu_Kehadiran";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
+            this.Load += new System.EventHandler(this.Menu_Kehadiran_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Menu_Kehadiran_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Menu_Kehadiran_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Menu_Kehadiran_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.minimize_b)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_b)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kehadiran_dg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +301,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox daftar_kelas_lb;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace emsp
 {
-    partial class Form5
+    partial class Menu_Mahasiswa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Mahasiswa));
             this.minimize_b = new System.Windows.Forms.PictureBox();
             this.close_b = new System.Windows.Forms.PictureBox();
             this.menu_mahasiswa_b = new System.Windows.Forms.Button();
@@ -61,10 +61,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.matkul_diambil_dg = new System.Windows.Forms.DataGridView();
             this.daftar_mahasiswa_lb = new System.Windows.Forms.ListBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimize_b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matkul_diambil_dg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // minimize_b
@@ -122,7 +124,7 @@
             // 
             // menu_penilaian_b
             // 
-            this.menu_penilaian_b.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.menu_penilaian_b.BackColor = System.Drawing.SystemColors.Control;
             this.menu_penilaian_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu_penilaian_b.BackgroundImage")));
             this.menu_penilaian_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menu_penilaian_b.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -189,7 +191,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(228, 232);
+            this.label3.Location = new System.Drawing.Point(228, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 19);
             this.label3.TabIndex = 45;
@@ -262,9 +264,9 @@
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
             this.label6.Location = new System.Drawing.Point(357, 268);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 14);
+            this.label6.Size = new System.Drawing.Size(18, 14);
             this.label6.TabIndex = 50;
-            this.label6.Text = "ID Mahasiswa";
+            this.label6.Text = "ID";
             // 
             // label7
             // 
@@ -443,6 +445,7 @@
             this.matkul_diambil_dg.BackgroundColor = System.Drawing.Color.Silver;
             this.matkul_diambil_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.matkul_diambil_dg.Enabled = false;
+            this.matkul_diambil_dg.GridColor = System.Drawing.Color.Black;
             this.matkul_diambil_dg.Location = new System.Drawing.Point(228, 430);
             this.matkul_diambil_dg.MultiSelect = false;
             this.matkul_diambil_dg.Name = "matkul_diambil_dg";
@@ -464,13 +467,25 @@
             this.daftar_mahasiswa_lb.TabIndex = 66;
             this.daftar_mahasiswa_lb.SelectedIndexChanged += new System.EventHandler(this.daftar_mahasiswa_lb_SelectedIndexChanged);
             // 
-            // Form5
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Location = new System.Drawing.Point(192, 39);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 493);
+            this.pictureBox2.TabIndex = 67;
+            this.pictureBox2.TabStop = false;
+            // 
+            // Menu_Mahasiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 550);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.daftar_mahasiswa_lb);
             this.Controls.Add(this.matkul_diambil_dg);
             this.Controls.Add(this.label12);
@@ -504,16 +519,17 @@
             this.Controls.Add(this.minimize_b);
             this.Controls.Add(this.close_b);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form5";
+            this.Name = "Menu_Mahasiswa";
             this.Text = "Form5";
-            this.Load += new System.EventHandler(this.Form5_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form5_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form5_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form5_MouseUp);
+            this.Load += new System.EventHandler(this.Menu_Mahasiswa_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Menu_Mahasiswa_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Menu_Mahasiswa_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Menu_Mahasiswa_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.minimize_b)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_b)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matkul_diambil_dg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,5 +569,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView matkul_diambil_dg;
         private System.Windows.Forms.ListBox daftar_mahasiswa_lb;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace emsp
 {
-    public partial class Form5 : Form //MENU MAHASISWA
+    public partial class Menu_Mahasiswa : Form
     {
         //CLASS DAFTAR MAHASISWA
         class daftar_mahasiswa
@@ -57,53 +57,57 @@ namespace emsp
         }
 
         //INIT
-        private string id = Form1.id;
+        private string id = Login.id;
         private List<daftar_mahasiswa> daftar_mahasiswa_gue = new List<daftar_mahasiswa>();
         private List<matkul_diambil> matkul_diambil_gue = new List<matkul_diambil>();
-        public Form5()
+        public Menu_Mahasiswa()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-        private void Form5_Load(object sender, EventArgs e)
+        private void Menu_Mahasiswa_Load(object sender, EventArgs e)
         {
             //ISI NAMA DOSEN
-            mysqlconnection();
-            sqlquery = connect.CreateCommand();
-            sqlquery.CommandText = "SELECT nama FROM dosen WHERE id_dosen = '" + id + "'";
-            MySqlDataReader data1 = sqlquery.ExecuteReader();
-            while (data1.Read()) nama_l.Text = data1.GetString("nama");
-            //ISI DAFTAR MAHASISWA
-            mysqlconnection();
-            sqlquery = connect.CreateCommand();
-            sqlquery.CommandText = "SELECT * FROM mahasiswa";
-            MySqlDataReader data2 = sqlquery.ExecuteReader();
-            daftar_mahasiswa_lb.BeginUpdate();
-            for (int a = 0; data2.Read(); a++)
+            if (mysqlconnection())
             {
-                daftar_mahasiswa_gue.Add(new daftar_mahasiswa(data2.GetString("id_mahasiswa"), data2.GetString("nama_depan") + " " + data2.GetString("nama_belakang"), data2.GetString("tempat_lahir") + " " + data2.GetString("tanggal_lahir"), data2.GetString("alamat"), data2.GetString("email"), data2.GetString("jenis_kelamin"), data2.GetString("id_jurusan"), data2.GetString("hp"), data2.GetString("angkatan")));
-                daftar_mahasiswa_lb.Items.Add(String.Format("{0} - {1} - {2}", a + 1, daftar_mahasiswa_gue[a].id_mahasiswa, daftar_mahasiswa_gue[a].nama_mahasiswa));
-                daftar_mahasiswa_lb.SetSelected(a, true);
+                sqlquery = connect.CreateCommand();
+                sqlquery.CommandText = "SELECT nama FROM dosen WHERE id_dosen = '" + id + "'";
+                MySqlDataReader data1 = sqlquery.ExecuteReader();
+                while (data1.Read()) nama_l.Text = data1.GetString("nama");
+                //ISI DAFTAR MAHASISWA
+                mysqlconnection();
+                sqlquery = connect.CreateCommand();
+                sqlquery.CommandText = "SELECT * FROM mahasiswa";
+                MySqlDataReader data2 = sqlquery.ExecuteReader();
+                daftar_mahasiswa_lb.BeginUpdate();
+                for (int a = 0; data2.Read(); a++)
+                {
+                    daftar_mahasiswa_gue.Add(new daftar_mahasiswa(data2.GetString("id_mahasiswa"), data2.GetString("nama_depan") + " " + data2.GetString("nama_belakang"), data2.GetString("tempat_lahir") + ", " + data2.GetString("tanggal_lahir").Substring(0, 10), data2.GetString("alamat"), data2.GetString("email"), data2.GetString("jenis_kelamin"), data2.GetString("id_jurusan"), data2.GetString("hp"), data2.GetString("angkatan")));
+                    daftar_mahasiswa_lb.Items.Add(String.Format("{0} - {1} - {2}", a + 1, daftar_mahasiswa_gue[a].id_mahasiswa, daftar_mahasiswa_gue[a].nama_mahasiswa));
+                    daftar_mahasiswa_lb.SetSelected(a, true);
+                }
+                daftar_mahasiswa_lb.EndUpdate();
+                daftar_mahasiswa_lb.SelectedIndex = 0;
             }
-            daftar_mahasiswa_lb.EndUpdate();
-            daftar_mahasiswa_lb.SelectedIndex = 0;
+            else MessageBox.Show("Gagal terhubung dengan database");
         }
 
         //KONEKSI MYSQL
         private string conn;
         private MySqlConnection connect;
         MySqlCommand sqlquery;
-        private void mysqlconnection()
+        private bool mysqlconnection()
         {
             try
             {
                 conn = "Server=localhost;Database=emsp_db;Uid=root;Pwd=;";
                 connect = new MySqlConnection(conn);
                 connect.Open();
+                return true;
             }
             catch (MySqlException e)
             {
-                throw;
+                return false;
             }
         }
 
@@ -132,43 +136,49 @@ namespace emsp
             no_hp_l.Text            = ": " + daftar_mahasiswa_gue[daftar_mahasiswa_lb.SelectedIndex].no_hp;
             angkatan_l.Text         = ": " + daftar_mahasiswa_gue[daftar_mahasiswa_lb.SelectedIndex].angkatan;
             //ISI MATA KULIAH YANG SEDANG DIAMBIL
-            mysqlconnection();
-            sqlquery = connect.CreateCommand();
-            sqlquery.CommandText = "SELECT m_m.id_matkul, m.nama_matkul, m.jumlah_sks FROM mahasiswa_matkul AS m_m, matkul AS m WHERE m_m.id_mahasiswa LIKE '" + daftar_mahasiswa_gue[daftar_mahasiswa_lb.SelectedIndex].id_mahasiswa + "' AND m_m.id_matkul = m.id_matkul";
-            MySqlDataReader data3 = sqlquery.ExecuteReader();
-            matkul_diambil_gue.Clear();
-            for (int a = 0; data3.Read(); a++) matkul_diambil_gue.Add(new matkul_diambil(a + 1, data3.GetString("id_matkul"), data3.GetString("nama_matkul"), data3.GetInt16("jumlah_sks")));
-            matkul_diambil_dg.DataSource = typeof(List<matkul_diambil>);
-            matkul_diambil_dg.DataSource = matkul_diambil_gue;
-            matkul_diambil_dg.DefaultCellStyle.Font = new Font("Bahnschrift SemiBold", 12, GraphicsUnit.Pixel);
-            //STYLE PER KOLOM
-            DataGridViewColumn column0 = matkul_diambil_dg.Columns[0]; column0.Width = 20;  column0.DefaultCellStyle.BackColor = Color.Silver;
-            DataGridViewColumn column1 = matkul_diambil_dg.Columns[1]; column1.Width = 60; column1.DefaultCellStyle.BackColor = Color.Silver;
-            DataGridViewColumn column2 = matkul_diambil_dg.Columns[2];                      column2.DefaultCellStyle.BackColor = Color.Silver;
-            DataGridViewColumn column3 = matkul_diambil_dg.Columns[3]; column3.Width = 40;  column3.DefaultCellStyle.BackColor = Color.Silver; column3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            if (mysqlconnection())
+            {
+                sqlquery = connect.CreateCommand();
+                sqlquery.CommandText = "SELECT m_m.id_matkul, m.nama_matkul, m.jumlah_sks FROM mahasiswa_matkul AS m_m, matkul AS m WHERE m_m.id_mahasiswa LIKE '" + daftar_mahasiswa_gue[daftar_mahasiswa_lb.SelectedIndex].id_mahasiswa + "' AND m_m.id_matkul = m.id_matkul";
+                MySqlDataReader data3 = sqlquery.ExecuteReader();
+                matkul_diambil_gue.Clear();
+                for (int a = 0; data3.Read(); a++) matkul_diambil_gue.Add(new matkul_diambil(a + 1, data3.GetString("id_matkul"), data3.GetString("nama_matkul"), data3.GetInt16("jumlah_sks")));
+                matkul_diambil_dg.DataSource = typeof(List<matkul_diambil>);
+                matkul_diambil_dg.DataSource = matkul_diambil_gue;
+                matkul_diambil_dg.DefaultCellStyle.Font = new Font("Bahnschrift SemiBold", 12, GraphicsUnit.Pixel);
+                //STYLE PER KOLOM
+                DataGridViewColumn column0 = matkul_diambil_dg.Columns[0]; column0.Width = 25; column0.DefaultCellStyle.BackColor = Color.Silver;
+                DataGridViewColumn column1 = matkul_diambil_dg.Columns[1]; column1.Width = 60; column1.DefaultCellStyle.BackColor = Color.Silver;
+                DataGridViewColumn column2 = matkul_diambil_dg.Columns[2]; column2.DefaultCellStyle.BackColor = Color.Silver;
+                DataGridViewColumn column3 = matkul_diambil_dg.Columns[3]; column3.Width = 40; column3.DefaultCellStyle.BackColor = Color.Silver; column3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            else MessageBox.Show("Gagal terhubung dengan database");
         }
 
         //TOMBOL MENU KEHADIRAN
         private void menu_kehadiran_b_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            Menu_Kehadiran menu_kehadiran = new Menu_Kehadiran();
+            menu_kehadiran.StartPosition = FormStartPosition.CenterScreen;
+            menu_kehadiran.Show();
             Hide();
         }
 
         //TOMBOL MENU PENILAIAN
         private void menu_penilaian_b_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
-            form3.Show();
+            Menu_Penilaian menu_penilaian = new Menu_Penilaian();
+            menu_penilaian.StartPosition = FormStartPosition.CenterScreen;
+            menu_penilaian.Show();
             Hide();
         }
 
         //TOMBOL MENU PENGAJAR
         private void menu_pengajar_b_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
-            form4.Show();
+            Menu_Pengajar menu_pengajar = new Menu_Pengajar();
+            menu_pengajar.StartPosition = FormStartPosition.CenterScreen;
+            menu_pengajar.Show();
             Hide();
         }
 
@@ -195,20 +205,17 @@ namespace emsp
         //DRAG WINDOW
         int Tog;
         int SX, SY;
-        private void Form5_MouseDown(object sender, MouseEventArgs e)
+        private void Menu_Mahasiswa_MouseDown(object sender, MouseEventArgs e)
         {
             Tog = 1;
             SX = e.X;
             SY = e.Y;
         }
-        private void Form5_MouseMove(object sender, MouseEventArgs e)
+        private void Menu_Mahasiswa_MouseMove(object sender, MouseEventArgs e)
         {
-            if (Tog == 1)
-            {
-                this.SetDesktopLocation(MousePosition.X - SX, MousePosition.Y - SY);
-            }
+            if (Tog == 1) this.SetDesktopLocation(MousePosition.X - SX, MousePosition.Y - SY);
         }
-        private void Form5_MouseUp(object sender, MouseEventArgs e)
+        private void Menu_Mahasiswa_MouseUp(object sender, MouseEventArgs e)
         {
             Tog = 0;
         }

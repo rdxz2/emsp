@@ -17,16 +17,16 @@ using System.Diagnostics;
 
 namespace emsp
 {
-    public partial class Form1 : Form //LOGIN
+    public partial class Login : Form 
     {
         //INIT
         public static string id = "";
-        public Form1()
+        public Login()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
             id_t.Focus();
         }
@@ -35,17 +35,18 @@ namespace emsp
         private string conn;
         private MySqlConnection connect;
         MySqlCommand sqlquery;
-        private void mysqlconnection()
+        private bool mysqlconnection()
         {
             try
             {
                 conn = "Server=localhost;Database=emsp_db;Uid=root;Pwd=;";
                 connect = new MySqlConnection(conn);
                 connect.Open();
+                return true;
             }
             catch (MySqlException e)
             {
-                throw;
+                return false;
             }
         }
 
@@ -72,21 +73,26 @@ namespace emsp
         //TOMBOL LOGIN
         private void masuk_b_Click(object sender, EventArgs e)
         {
-            mysqlconnection();
-            string password = password_t.Text;
-            id = id_t.Text;
-            sqlquery = connect.CreateCommand();
-            sqlquery.CommandText = "SELECT password FROM dosen WHERE id_dosen = '" + id + "'";
-            MySqlDataReader data = sqlquery.ExecuteReader();
-            while (data.Read())
+            if (mysqlconnection())
             {
-                if (data.GetString("password") == MD5(password))
+                string password = password_t.Text;
+                id = id_t.Text;
+                sqlquery = connect.CreateCommand();
+                sqlquery.CommandText = "SELECT password FROM dosen WHERE id_dosen = '" + id + "'";
+                MySqlDataReader data = sqlquery.ExecuteReader();
+                while (data.Read())
                 {
-                    Form2 form2 = new Form2();
-                    form2.ShowDialog();
-                    Hide();
+                    if (data.GetString("password") == MD5(password))
+                    {
+                        Menu_Kehadiran menu_kehadiran = new Menu_Kehadiran();
+                        menu_kehadiran.StartPosition = FormStartPosition.CenterScreen;
+                        menu_kehadiran.Show();
+                        Hide();
+                    }
+                    else MessageBox.Show("ID atau password salah");
                 }
             }
+            else MessageBox.Show("Gagal terhubung dengan database");
         }
 
         //TOMBOL MINIMIZE
@@ -112,20 +118,17 @@ namespace emsp
         //DRAG WINDOW
         int Tog;
         int SX, SY;
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        private void Login_MouseDown(object sender, MouseEventArgs e)
         {
             Tog = 1;
             SX = e.X;
             SY = e.Y;
         }
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        private void Login_MouseMove(object sender, MouseEventArgs e)
         {
-            if (Tog == 1)
-            {
-                this.SetDesktopLocation(MousePosition.X - SX, MousePosition.Y - SY);
-            }
+            if (Tog == 1) this.SetDesktopLocation(MousePosition.X - SX, MousePosition.Y - SY);
         }
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        private void Login_MouseUp(object sender, MouseEventArgs e)
         {
             Tog = 0;
         }
