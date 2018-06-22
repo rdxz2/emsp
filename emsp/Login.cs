@@ -76,12 +76,14 @@ namespace emsp
             if (mysqlconnection())
             {
                 string password = password_t.Text;
+                bool ada = false;
                 id = id_t.Text;
                 sqlquery = connect.CreateCommand();
                 sqlquery.CommandText = "SELECT password FROM dosen WHERE id_dosen = '" + id + "'";
                 MySqlDataReader data = sqlquery.ExecuteReader();
                 while (data.Read())
                 {
+                    ada = true;
                     if (data.GetString("password") == MD5(password))
                     {
                         Menu_Kehadiran menu_kehadiran = new Menu_Kehadiran();
@@ -91,6 +93,7 @@ namespace emsp
                     }
                     else MessageBox.Show("ID atau password salah");
                 }
+                if(!ada) MessageBox.Show("ID atau password salah");
             }
             else MessageBox.Show("Gagal terhubung dengan database");
         }
