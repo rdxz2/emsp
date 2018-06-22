@@ -57,6 +57,8 @@
             this.uas_praktek_t = new System.Windows.Forms.TextBox();
             this.tugas_praktek_t = new System.Windows.Forms.TextBox();
             this.daftar_mahasiswa_lb = new System.Windows.Forms.ListBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.total_nilai_l = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.minimize_b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.close_b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -248,9 +250,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(308, 414);
+            this.label1.Location = new System.Drawing.Point(309, 388);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 52;
             this.label1.Text = "UTS Teori";
             // 
@@ -260,7 +262,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(509, 452);
+            this.label2.Location = new System.Drawing.Point(510, 421);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 16);
             this.label2.TabIndex = 53;
@@ -272,7 +274,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkGray;
-            this.label4.Location = new System.Drawing.Point(509, 376);
+            this.label4.Location = new System.Drawing.Point(510, 355);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 16);
             this.label4.TabIndex = 54;
@@ -284,9 +286,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5.Location = new System.Drawing.Point(308, 452);
+            this.label5.Location = new System.Drawing.Point(309, 421);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 16);
+            this.label5.Size = new System.Drawing.Size(63, 16);
             this.label5.TabIndex = 55;
             this.label5.Text = "UAS Teori";
             // 
@@ -296,9 +298,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkGray;
-            this.label7.Location = new System.Drawing.Point(308, 376);
+            this.label7.Location = new System.Drawing.Point(309, 355);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 16);
+            this.label7.Size = new System.Drawing.Size(71, 16);
             this.label7.TabIndex = 56;
             this.label7.Text = "Tugas Teori";
             // 
@@ -308,7 +310,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkGray;
-            this.label8.Location = new System.Drawing.Point(509, 414);
+            this.label8.Location = new System.Drawing.Point(510, 388);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 16);
             this.label8.TabIndex = 57;
@@ -320,7 +322,7 @@
             this.id_nama_mahasiswa_l.BackColor = System.Drawing.Color.Transparent;
             this.id_nama_mahasiswa_l.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id_nama_mahasiswa_l.ForeColor = System.Drawing.Color.DarkGray;
-            this.id_nama_mahasiswa_l.Location = new System.Drawing.Point(260, 337);
+            this.id_nama_mahasiswa_l.Location = new System.Drawing.Point(260, 322);
             this.id_nama_mahasiswa_l.Name = "id_nama_mahasiswa_l";
             this.id_nama_mahasiswa_l.Size = new System.Drawing.Size(187, 19);
             this.id_nama_mahasiswa_l.TabIndex = 58;
@@ -330,7 +332,7 @@
             // 
             this.tugas_teori_t.BackColor = System.Drawing.Color.DarkGray;
             this.tugas_teori_t.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tugas_teori_t.Location = new System.Drawing.Point(391, 374);
+            this.tugas_teori_t.Location = new System.Drawing.Point(392, 353);
             this.tugas_teori_t.Name = "tugas_teori_t";
             this.tugas_teori_t.Size = new System.Drawing.Size(73, 23);
             this.tugas_teori_t.TabIndex = 59;
@@ -340,7 +342,7 @@
             // 
             this.uas_teori_t.BackColor = System.Drawing.Color.DarkGray;
             this.uas_teori_t.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uas_teori_t.Location = new System.Drawing.Point(391, 450);
+            this.uas_teori_t.Location = new System.Drawing.Point(392, 419);
             this.uas_teori_t.Name = "uas_teori_t";
             this.uas_teori_t.Size = new System.Drawing.Size(73, 23);
             this.uas_teori_t.TabIndex = 60;
@@ -350,7 +352,7 @@
             // 
             this.uts_teori_t.BackColor = System.Drawing.Color.DarkGray;
             this.uts_teori_t.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uts_teori_t.Location = new System.Drawing.Point(391, 412);
+            this.uts_teori_t.Location = new System.Drawing.Point(392, 386);
             this.uts_teori_t.Name = "uts_teori_t";
             this.uts_teori_t.Size = new System.Drawing.Size(73, 23);
             this.uts_teori_t.TabIndex = 61;
@@ -360,7 +362,7 @@
             // 
             this.uts_praktek_t.BackColor = System.Drawing.Color.DarkGray;
             this.uts_praktek_t.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uts_praktek_t.Location = new System.Drawing.Point(610, 412);
+            this.uts_praktek_t.Location = new System.Drawing.Point(611, 386);
             this.uts_praktek_t.Name = "uts_praktek_t";
             this.uts_praktek_t.Size = new System.Drawing.Size(73, 23);
             this.uts_praktek_t.TabIndex = 62;
@@ -370,7 +372,7 @@
             // 
             this.uas_praktek_t.BackColor = System.Drawing.Color.DarkGray;
             this.uas_praktek_t.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uas_praktek_t.Location = new System.Drawing.Point(610, 450);
+            this.uas_praktek_t.Location = new System.Drawing.Point(611, 419);
             this.uas_praktek_t.Name = "uas_praktek_t";
             this.uas_praktek_t.Size = new System.Drawing.Size(73, 23);
             this.uas_praktek_t.TabIndex = 63;
@@ -380,7 +382,7 @@
             // 
             this.tugas_praktek_t.BackColor = System.Drawing.Color.DarkGray;
             this.tugas_praktek_t.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tugas_praktek_t.Location = new System.Drawing.Point(610, 374);
+            this.tugas_praktek_t.Location = new System.Drawing.Point(611, 353);
             this.tugas_praktek_t.Name = "tugas_praktek_t";
             this.tugas_praktek_t.Size = new System.Drawing.Size(73, 23);
             this.tugas_praktek_t.TabIndex = 64;
@@ -399,6 +401,29 @@
             this.daftar_mahasiswa_lb.TabIndex = 65;
             this.daftar_mahasiswa_lb.SelectedIndexChanged += new System.EventHandler(this.daftar_mahasiswa_lb_SelectedIndexChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkGray;
+            this.label9.Location = new System.Drawing.Point(399, 457);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 16);
+            this.label9.TabIndex = 66;
+            this.label9.Text = "Total Nilai:";
+            // 
+            // total_nilai_l
+            // 
+            this.total_nilai_l.AutoSize = true;
+            this.total_nilai_l.BackColor = System.Drawing.Color.Transparent;
+            this.total_nilai_l.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_nilai_l.ForeColor = System.Drawing.Color.DarkGray;
+            this.total_nilai_l.Location = new System.Drawing.Point(471, 457);
+            this.total_nilai_l.Name = "total_nilai_l";
+            this.total_nilai_l.Size = new System.Drawing.Size(0, 16);
+            this.total_nilai_l.TabIndex = 67;
+            // 
             // Menu_Penilaian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +431,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 550);
+            this.Controls.Add(this.total_nilai_l);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.daftar_mahasiswa_lb);
             this.Controls.Add(this.tugas_praktek_t);
             this.Controls.Add(this.uas_praktek_t);
@@ -434,6 +461,7 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.minimize_b);
             this.Controls.Add(this.close_b);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu_Penilaian";
             this.Text = "Form3";
@@ -479,5 +507,7 @@
         private System.Windows.Forms.TextBox uas_praktek_t;
         private System.Windows.Forms.TextBox tugas_praktek_t;
         private System.Windows.Forms.ListBox daftar_mahasiswa_lb;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label total_nilai_l;
     }
 }

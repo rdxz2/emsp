@@ -187,6 +187,18 @@ namespace emsp
                 uts_praktek_t.Text          = nilai_gue[0].nilai_uts_praktek.ToString();
                 uas_teori_t.Text            = nilai_gue[0].nilai_uas_teori.ToString();
                 uas_praktek_t.Text          = nilai_gue[0].nilai_uas_praktek.ToString();
+                double nilai_akhir = 0.3 * (0.67 * nilai_gue[0].nilai_tugas_teori + 0.33 * nilai_gue[0].nilai_tugas_praktek) + 0.3 * (0.67 * nilai_gue[0].nilai_uts_teori + 0.33 * nilai_gue[0].nilai_uts_praktek) + 0.4 * (0.67 * nilai_gue[0].nilai_uas_teori + 0.33 * nilai_gue[0].nilai_uas_praktek);
+                string huruf_akhir = "";
+                if (nilai_akhir >= 85) huruf_akhir = "A";
+                else if (nilai_akhir >= 80) huruf_akhir = "A-";
+                else if (nilai_akhir >= 75) huruf_akhir = "B+";
+                else if (nilai_akhir >= 70) huruf_akhir = "B";
+                else if (nilai_akhir >= 65) huruf_akhir = "B-";
+                else if (nilai_akhir >= 60) huruf_akhir = "C+";
+                else if (nilai_akhir >= 55) huruf_akhir = "C";
+                else if (nilai_akhir >= 50) huruf_akhir = "D";
+                else huruf_akhir = "E";
+                total_nilai_l.Text = String.Format("{0} - {1}", nilai_akhir, huruf_akhir);
             }
             else MessageBox.Show("Gagal terhubung dengan database");
         }
@@ -238,6 +250,9 @@ namespace emsp
                 int num_rows_updated = sqlquery.ExecuteNonQuery();
                 sqlquery.Dispose();
                 MessageBox.Show("Data berhasil disimpan");
+                object sender2 = new object();
+                EventArgs e2 = new EventArgs();
+                daftar_mahasiswa_lb_SelectedIndexChanged(sender2, e2);
             }
             else MessageBox.Show("Gagal terhubung dengan database");
         }

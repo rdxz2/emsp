@@ -82,7 +82,7 @@ namespace emsp
                     daftar_kelas_lb.SetSelected(a, true);
                 }
                 daftar_kelas_lb.EndUpdate();
-                daftar_kelas_lb.SelectedIndex = 0;
+                //daftar_kelas_lb.SelectedIndex = 0;
             }
             else MessageBox.Show("Gagal terhubung dengan database");
         }

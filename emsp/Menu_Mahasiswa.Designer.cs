@@ -518,6 +518,7 @@
             this.Controls.Add(this.menu_kehadiran_b);
             this.Controls.Add(this.minimize_b);
             this.Controls.Add(this.close_b);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu_Mahasiswa";
             this.Text = "Form5";

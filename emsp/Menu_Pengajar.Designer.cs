@@ -187,7 +187,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
             this.label2.Location = new System.Drawing.Point(228, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 19);
+            this.label2.Size = new System.Drawing.Size(149, 19);
             this.label2.TabIndex = 75;
             this.label2.Text = "Informasi Pengajar:";
             // 
@@ -354,7 +354,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkGray;
             this.label12.Location = new System.Drawing.Point(228, 225);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(234, 19);
+            this.label12.Size = new System.Drawing.Size(233, 19);
             this.label12.TabIndex = 90;
             this.label12.Text = "Mata kuliah yang sedang diajar:";
             // 
@@ -409,6 +409,7 @@
             this.Controls.Add(this.menu_kehadiran_b);
             this.Controls.Add(this.minimize_b);
             this.Controls.Add(this.close_b);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu_Pengajar";
             this.Text = "Form4";

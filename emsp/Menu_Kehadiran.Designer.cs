@@ -270,6 +270,7 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.minimize_b);
             this.Controls.Add(this.close_b);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu_Kehadiran";
             this.Text = "Form2";
